@@ -1,0 +1,20 @@
+{
+    "name": "ecommerce-stocktracker",
+    "description": "E-Commerce and Stock Tracker application",
+    "version": "v0.0.1",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/opstech23/E-Commerce-StockTracker"
+    },
+    "dependencies": {
+        "express": "^4.16.2",
+        "express-graphql": "^0.6.11",
+        "graphql": "^0.11.7",
+        "lodash": "^4.17.4",
+        "babel-cli": "^6.24.1",
+        "babel-preset-node6": "^11.0.0",
+        "babel-register": "6.24.1",
+        "nodemon": "^1.11.0"
+    },
+    "private": true
+}
