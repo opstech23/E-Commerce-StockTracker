@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- SQL XML created by WWW SQL Designer, https://github.com/ondras/wwwsqldesigner/ -->
+<!-- Active URL: http://ondras.zarovi.cz/sql/demo/?keyword=default -->
+<sql>
+<datatypes db="mysql">
+        <group color="rgb(238,238,170)" label="Numeric">
+            <type label="Integer" quote="" sql="INTEGER" length="0"/>
+            <type label="TINYINT" quote="" sql="TINYINT" length="0"/>
+            <type label="SMALLINT" quote="" sql="SMALLINT" length="0"/>
+            <type label="MEDIUMINT" quote="" sql="MEDIUMINT" length="0"/>
+            <type label="INT" quote="" sql="INT" length="0"/>
+            <type label="BIGINT" quote="" sql="BIGINT" length="0"/>
+            <type label="Decimal" quote="" sql="DECIMAL" length="1" re="DEC"/>
+            <type label="Single precision" quote="" sql="FLOAT" length="0"/>
+            <type label="Double precision" quote="" sql="DOUBLE" length="0" re="DOUBLE"/>
+        </group>
+
+        <group color="rgb(255,200,200)" label="Character">
+            <type label="Char" quote="'" sql="CHAR" length="1"/>
+            <type label="Varchar" quote="'" sql="VARCHAR" length="1"/>
+            <type label="Text" quote="'" sql="MEDIUMTEXT" length="0" re="TEXT"/>
+            <type label="Binary" quote="'" sql="BINARY" length="1"/>
+            <type label="Varbinary" quote="'" sql="VARBINARY" length="1"/>
+            <type label="BLOB" quote="'" sql="BLOB" length="0" re="BLOB"/>
+        </group>
+
+        <group color="rgb(200,255,200)" label="Date &amp; Time">
+            <type label="Date" quote="'" sql="DATE" length="0"/>
+            <type label="Time" quote="'" sql="TIME" length="0"/>
+            <type label="Datetime" quote="'" sql="DATETIME" length="0"/>
+            <type label="Year" quote="" sql="YEAR" length="0"/>
+            <type label="Timestamp" quote="'" sql="TIMESTAMP" length="0"/>
+        </group>
+
+        <group color="rgb(200,200,255)" label="Miscellaneous">
+            <type label="ENUM" quote="" sql="ENUM" length="1"/>
+            <type label="SET" quote="" sql="SET" length="1"/>
+            <type label="Bit" quote="" sql="bit" length="0"/>
+        </group>
+    </datatypes><table x="391" y="266" name="customer_profiles">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="address" null="0" autoincrement="0">
+<datatype>MEDIUMTEXT</datatype>
+<default>'NULL'</default></row>
+<row name="region" null="0" autoincrement="0">
+<datatype>VARCHAR</datatype>
+</row>
+<row name="province" null="0" autoincrement="0">
+<datatype>VARCHAR</datatype>
+</row>
+<row name="country" null="0" autoincrement="0">
+<datatype>VARCHAR</datatype>
+</row>
+<row name="id_number" null="0" autoincrement="0">
+<datatype>VARCHAR</datatype>
+</row>
+<row name="contact_number" null="0" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>'NULL'</default></row>
+<row name="email" null="0" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>'NULL'</default></row>
+<row name="sso_profile_id" null="0" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>'NULL'</default><relation table="customers" row="id" />
+</row>
+<row name="license_number" null="0" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>'NULL'</default></row>
+<row name="updated_at" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+</row>
+<row name="created_at" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+<part>id_number</part>
+</key>
+</table>
+<table x="155" y="491" name="customers">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="name" null="0" autoincrement="0">
+<datatype>VARCHAR</datatype>
+</row>
+<row name="surname" null="0" autoincrement="0">
+<datatype>VARCHAR</datatype>
+</row>
+<row name="email" null="0" autoincrement="0">
+<datatype>VARCHAR</datatype>
+</row>
+<row name="password" null="0" autoincrement="0">
+<datatype>VARCHAR</datatype>
+</row>
+<row name="created_at" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+</row>
+<row name="updated_at" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="705" y="109" name="salon">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="salon_name" null="0" autoincrement="0">
+<datatype>VARCHAR</datatype>
+</row>
+<row name="salon_address" null="0" autoincrement="0">
+<datatype>MEDIUMTEXT</datatype>
+</row>
+<row name="salon_contact" null="0" autoincrement="0">
+<datatype>VARCHAR</datatype>
+</row>
+<row name="customer_id" null="0" autoincrement="0">
+<datatype>INTEGER</datatype>
+<relation table="customer_profiles" row="id" />
+</row>
+<row name="created_at" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+</row>
+<row name="updated_at" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="1010" y="306" name="products">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="product_name" null="0" autoincrement="0">
+<datatype>VARCHAR</datatype>
+</row>
+<row name="product_description" null="0" autoincrement="0">
+<datatype>MEDIUMTEXT</datatype>
+</row>
+<row name="product_color" null="0" autoincrement="0">
+<datatype>VARCHAR</datatype>
+</row>
+<row name="product_barcode" null="0" autoincrement="0">
+<datatype>VARCHAR</datatype>
+</row>
+<row name="available_stock" null="0" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>0</default></row>
+<row name="stock_sold" null="0" autoincrement="0">
+<datatype>INTEGER</datatype>
+</row>
+<row name="stock_returned" null="0" autoincrement="0">
+<datatype>INTEGER</datatype>
+</row>
+<row name="created_at" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+</row>
+<row name="updated_at" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="696" y="517" name="financials">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="customer_id" null="0" autoincrement="0">
+<datatype>INTEGER</datatype>
+<relation table="customer_profiles" row="id" />
+</row>
+<row name="product_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="products" row="id" />
+</row>
+<row name="created_at" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+</row>
+<row name="updated_at" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+</row>
+<row name="opening_balance" null="0" autoincrement="0">
+<datatype>INT</datatype>
+</row>
+<row name="quantity" null="0" autoincrement="0">
+<datatype>INTEGER</datatype>
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+</sql>
